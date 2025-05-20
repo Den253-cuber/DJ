@@ -8,6 +8,9 @@ ARG WWWUSER
 USER root
 
 RUN apk update && apk add --no-cache \
+    zlib-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
     autoconf \
     linux-headers \
     gcc \
