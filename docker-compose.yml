@@ -6,7 +6,7 @@ services:
     image: nginx:alpine
     working_dir: /application
     ports:
-      - "127.0.0.1:3536:80"
+      - "127.0.0.1:10000:80"
     volumes:
       - ./:/var/www/dj
       - ./deploy/nginx/conf.d:/etc/nginx/conf.d
@@ -39,7 +39,7 @@ services:
     volumes:
       - dj-pgsql-data:/var/lib/postgresql/data
     ports:
-      - '127.0.0.1:5456:5432'
+      - '127.0.0.1:10001:5432'
     networks:
       - dj
 
@@ -49,7 +49,7 @@ services:
     volumes:
       - dj-cache-data:/data
     ports:
-      - "127.0.0.1:6356:6379"
+      - "127.0.0.1:10002:6379"
     networks:
       - dj
 
