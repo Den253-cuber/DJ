@@ -25,6 +25,8 @@ services:
     volumes:
       - ./:/var/www/dj
       - ./deploy/php/uploads.ini:/usr/local/etc/php/php.ini
+    ports:
+      - "127.0.0.1:8000:8000" 
     networks:
       - dj
 
